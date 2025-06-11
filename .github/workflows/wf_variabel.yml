@@ -13,6 +13,6 @@ jobs:
       Greeting: Hello
     steps:
       - name: Say hello
-        run: echo "$Greeting $First_Name is using $cloed" !
+        run: echo "$Greeting $First_Name is using $cloud" !
         env: 
           First_Name: Plamedi
