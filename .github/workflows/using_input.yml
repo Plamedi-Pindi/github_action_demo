@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test User Input Workflow 
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs: 
+      number1:
+        description: 'First number'
+        default: '0'
+        required: true
+
+      number2:
+        description: 'Second number'
+        default: '0'
+        required: true
+        
+jobs:
+  add_number:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Runs a single command using the runners shell
+      - name: Add number
+        id: sum
+        run: echo "::set-output name.sum::$((${{ inputs.number1 }} + {{ inputs.number2 }}))"
+
+      # Runs a set of commands using the runners shell
+      - name: Display sum
+        run: echo "The sum of ${{ inputs.number1 }} and ${{ inputs.number2 }} is ${{ steps.sum.output.sum }}"
