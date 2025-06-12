@@ -1,27 +1,21 @@
 name: Revisao
 
-on:
-  push:
-    branches: [ "master" ]
-    
+on: 
   workflow_dispatch:
   
 env:
-  Nome: Plamedi Pindi
+  Name: Plamedi
 
 jobs:
   Resivsao:
     runs-on: ubuntu-latest
-
     env:
       Proffission: Dev
       
     steps:
       - uses: actions/checkout@v4
-
       - name: Saudar
-        run: echo "Hello, I'm $Name and I work as a $Proffision in $country"
-
+        run: echo "Hello, I'm $Name and I work as a $Proffission in $country"
         env:
           country: Brasil
 
