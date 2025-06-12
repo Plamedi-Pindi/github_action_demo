@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Saudar
-        run: echo "Hello, I'm $Name and I work as a $Proffission in $country"
+        run: echo "Hello, I'm $Name and I work as a $Proffission in $country. I'm certified at ${{CERTIFYED}}"
         env:
           country: Brasil
 
