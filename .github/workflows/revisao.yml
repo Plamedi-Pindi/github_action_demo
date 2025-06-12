@@ -1,0 +1,19 @@
+
+name: Revisao
+
+on:
+  push:
+    branches: [ "master" ]
+    
+  workflow_dispatch:
+
+jobs:
+  Resivsao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Saudar
+        run: echo Hello this is my train!
+
