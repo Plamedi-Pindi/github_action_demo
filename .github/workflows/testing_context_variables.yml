@@ -7,12 +7,11 @@ env:
  cloud: google-cloud
 
 jobs:
-  greeting_job:
+  test_context_variables:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
     steps:
-      - name: Say hello
-        run: echo "$Greeting $First_Name is using $cloud with project ${{vars.PROJECT_ID}}!" 
-        env: 
-          First_Name: Plamedi
+      - name: "Check Context Variables"
+        run: |
+          echo "Repository name : ${{ github.repository }}"
+          echo "Workflow name : ${{ github.workflow }}"
+          echo "triggered by : ${{ github.triggering_atcor }}"
